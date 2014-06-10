@@ -1,0 +1,65 @@
+<!-- <h2>Home</h2>
+
+<p class="status good" ng-show-auth="login">Hello! You are logged in.</p>
+<p class="status" ng-show-auth="logout">Not logged in</p>
+<p class="status error" ng-show-auth="error">{{auth.error}}</p>
+
+<input ng-model="syncedValue" type="text" /> <b>{{syncedValue}}</b>
+
+<p>Open <a ng-href="{{FBURL}}/syncedValue">Forge</a> or a <a target="_blank" href="#/">new window</a> to see this input update in real time:</p>
+
+ -->
+<div class="container">
+  <div class="row" style="margin-bottom:12px;">
+    <div class="col-md-12">
+      <form ng-submit="addCategory(newCategory)">
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="newCategory">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Thing</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel" style="padding:12px;">
+    <table class="table" style="text-align:center;">
+      <thead>    
+        <tr>
+          <th style="text-align:center;">
+            <i class="fa fa-smile-o text-huge text-primary"></i>
+          </th>
+          <th style="text-align:center;">
+          <h1>Things</h1>
+          </th>
+          <th style="text-align:center;">
+            <i class="fa fa-frown-o text-huge text-danger"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody>    
+        <tr ng-repeat="(id, cat) in categories">
+          <td style="width:33.33333333%;">
+            <strong style="font-size:25px;">{{cat.smiles}}</strong>
+            <button class="btn btn-primary btn-sm pull-right" ng-click="addSmile(id, cat.smiles)"><i class="fa fa-plus"></i></button>
+          </td>
+          
+          <td ng-click="updateTitle = true" style="width:33.33333333%;" ng-mouseleave="updateTitle = false">
+            <strong ng-hide="updateTitle">{{cat.title}}</strong>
+            <div class="input-group" ng-show="updateTitle">
+              <input type="text" class="form-control" ng-model="cat.title">
+              <span class="input-group-btn">              
+                <button ng-click="updateCategory(id, cat.title, 'title')" class="btn btn-info">Done</button>
+                <button ng-click="removeCategory(id)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+              </span>
+            </div>
+          </td>
+          <td style="width:33.33333333%;">
+            <strong style="font-size:25px;">{{cat.frowns}}</strong>            
+            <button class="btn btn-danger btn-sm pull-left" ng-click="addFrown(id, cat.frowns)"><i class="fa fa-minus"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
