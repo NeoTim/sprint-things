@@ -10,7 +10,9 @@ angular.module('myApp',
   'myApp.controllers',
   'simpleLoginTools',
   'routeSecurity',
-  'interface.controller'
+  'interface.controller',
+  'things.controller',
+  'sprint.controller'
   ]
 )
 

@@ -12,15 +12,16 @@
 
   <ul class="menu">
     <li><a href="#/home">home</a></li>
-    <li><a href="#/chat">chat</a></li>
-    <li ng-show-auth="['logout','error']"><a href="#/login">login</a></li>
+    <li><a href="#/sprints">Sprints</a></li>
+    <!-- <li><a href="#/chat">chat</a></li> -->
+    <!-- <li ng-show-auth="['logout','error']"><a href="#/login">login</a></li> -->
     <li ng-show-auth="'login'"><a href="#/account">account</a></li>
   </ul>
 
 
   <div ng-view></div>
 
-  <div>AngularFire-seed v<span app-version></span></div>
+  <!-- <div>AngularFire-seed v<span app-version></span></div> -->
 
   <script rtpe="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script rtpe="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -53,5 +54,7 @@
   <script src="js/module.simpleLoginTools.js"></script>
   <script src="js/module.routeSecurity.js"></script>
   <script src="js/controllers/interface.controller.js"></script>
+  <script src="js/controllers/sprint.controller.js"></script>
+  <script src="js/controllers/things.controller.js"></script>
 </body>
 </html>

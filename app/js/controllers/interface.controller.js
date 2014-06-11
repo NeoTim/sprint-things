@@ -2,6 +2,7 @@ angular.module('interface.controller', [])
 
 
 .controller('interfaceCtrl', ['$scope', 'syncData', function ($scope, syncData) {
+  
   $scope.categories = syncData('categories');
 
   $scope.addCategory = function( value ){

@@ -1,17 +1,4 @@
-<!-- <h2>Home</h2>
-
-<p class="status good" ng-show-auth="login">Hello! You are logged in.</p>
-<p class="status" ng-show-auth="logout">Not logged in</p>
-<p class="status error" ng-show-auth="error">{{auth.error}}</p>
-
-<input ng-model="syncedValue" type="text" /> <b>{{syncedValue}}</b>
-
-<p>Open <a ng-href="{{FBURL}}/syncedValue">Forge</a> or a <a target="_blank" href="#/">new window</a> to see this input update in real time:</p>
-
- -->
-
-
-<div class="container">
+<div class="container" ng-controller="thingsCtrl">
   <div class="row" style="margin-bottom:12px;">
     <div class="col-md-12">
       <form ng-submit="addCategory(newCategory)">
@@ -40,7 +27,7 @@
         </tr>
       </thead>
       <tbody>    
-        <tr ng-repeat="(id, cat) in categories">
+        <tr ng-repeat="(id, cat) in sprint.things">
           <td style="width:33.33333333%;">
             <strong style="font-size:25px;">{{cat.smiles}}</strong>
             <button class="btn btn-primary btn-sm pull-right" ng-click="addSmile(id, cat.smiles)"><i class="fa fa-plus"></i></button>

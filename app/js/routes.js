@@ -10,6 +10,16 @@ angular.module('myApp.routes', ['ngRoute'])
          controller: 'interfaceCtrl'
       });
 
+      $routeProvider.when('/sprints', {
+         templateUrl: 'partials/sprints.html',
+         controller: 'sprintsCtrl'
+      });
+
+      $routeProvider.when('/sprints/:sprintId', {
+         templateUrl: 'partials/sprint.html',
+         conroller: 'thingsCtrl'
+      });
+
       $routeProvider.when('/chat', {
          templateUrl: 'partials/chat.html',
          controller: 'ChatCtrl'

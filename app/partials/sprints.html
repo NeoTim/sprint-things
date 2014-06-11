@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row" style="margin-bottom:12px;">
+    <div class="col-md-12">
+    <h1>Sprints</h1>
+      <form ng-submit="addSprint(newSprint)">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus"> Sprint</i></button>
+          </span>
+          <input type="text" class="form-control" ng-model="newSprint" placeholder="Sprint title...">
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+    </div>
+  </div>
+  <div class="row">  
+    <div ng-repeat="(id, sprint) in sprints" class="col-md-3" style="" ng-mouseenter="showSprint = true" ng-mouseleave="showSprint = false">
+      <section class="panel panel-box">
+        <a href="#/sprints/{{id}}" class="panel-top bg-warning">
+          <i class="fa fa-comments-o text-large"></i>
+        </a>
+        <div class="panel-bottom bg-reverse">
+          <!-- <p class="size-h1">00</p> -->
+          <p class="text-muted"> {{sprint.title}} </p>
+        </div>
+        <div class="btn-group" ng-show="showSprint">
+          <button type="button" ng-click="removeSprint(id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
